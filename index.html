@@ -682,20 +682,45 @@ document.querySelectorAll('.value-card').forEach(function(card){
 });
 
 // Hero email signup
-function handleHeroSignup(e){
+async function submitToWeb3Forms(email) {
+  var res = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      access_key: '43f3a1d4-3a9c-4fdb-a1ca-39c75d278bd8',
+      subject: 'VEDA HOME — New Email Signup',
+      from_name: 'VEDA HOME Website',
+      email: email,
+      message: 'Early access signup from vedahome.shop',
+      botcheck: ''
+    })
+  });
+  var data = await res.json();
+  return data.success;
+}
+
+async function handleHeroSignup(e){
   e.preventDefault();
-  document.getElementById('hero-form').style.display='none';
-  document.querySelector('.hero-form-note').style.display='none';
-  document.getElementById('hero-form-success').classList.add('show');
+  var email = document.querySelector('#hero-form input[name="email"]').value;
+  var ok = await submitToWeb3Forms(email);
+  if(ok){
+    document.getElementById('hero-form').style.display='none';
+    document.querySelector('.hero-form-note').style.display='none';
+    document.getElementById('hero-form-success').classList.add('show');
+  }
   return false;
 }
 
 // Bottom email signup
-function handleSignup(e){
+async function handleSignup(e){
   e.preventDefault();
-  document.getElementById('signup-form').style.display='none';
-  document.querySelector('.signup-note').style.display='none';
-  document.getElementById('signup-success').classList.add('show');
+  var email = document.querySelector('#signup-form input[name="email"]').value;
+  var ok = await submitToWeb3Forms(email);
+  if(ok){
+    document.getElementById('signup-form').style.display='none';
+    document.querySelector('.signup-note').style.display='none';
+    document.getElementById('signup-success').classList.add('show');
+  }
   return false;
 }
 
