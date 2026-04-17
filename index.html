@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VEDA HOME — Ancient Wisdom. Modern Clean.</title>
+<title>VEDA HOME — Pour. Stir. Purify.</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="description" content="VEDA HOME: Plant-based cleaning concentrate rooted in Ayurvedic wisdom. One bottle. Every surface. No compromise.">
+<meta name="description" content="VEDA HOME: Plant-based cleaning concentrate rooted in Ayurvedic wisdom. Pour. Stir. Purify. One pouch. Every surface. No compromise.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Noto+Sans+Devanagari:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -28,6 +28,7 @@
   --text-light: #8a9a7b;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-devanagari: 'Noto Sans Devanagari', sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -51,23 +52,6 @@ body {
   transform: translate(-50%, -50%);
   transition: opacity 0.3s;
 }
-
-/* ===== REVEAL ANIMATIONS ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-left { opacity: 0; transform: translateX(-60px); transition: opacity 1s ease, transform 1s ease; }
-.reveal-right { opacity: 0; transform: translateX(60px); transition: opacity 1s ease, transform 1s ease; }
-.reveal-left.visible, .reveal-right.visible { opacity: 1; transform: translateX(0); }
-.reveal-scale { opacity: 0; transform: scale(0.9); transition: opacity 0.8s ease, transform 0.8s ease; }
-.reveal-scale.visible { opacity: 1; transform: scale(1); }
-.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; }
-.d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
-.d5 { transition-delay: 0.5s; } .d6 { transition-delay: 0.6s; }
-.d7 { transition-delay: 0.7s; }
 
 /* ===== GOLD DIVIDER ===== */
 .gold-divider {
@@ -158,29 +142,49 @@ body {
 .hero .mandala.r4 { width: 90px; height: 90px; top: 20%; left: 12%; animation: floatA 13s ease-in-out infinite 2s; }
 
 .hero-content { position: relative; z-index: 1; max-width: 740px; }
+
+/* Sanskrit ghost text */
+.hero-sanskrit {
+  font-family: var(--font-devanagari); font-weight: 300;
+  font-size: clamp(80px, 16vw, 180px);
+  color: var(--gold); opacity: 0.08;
+  line-height: 1; margin-bottom: -40px;
+  pointer-events: none; user-select: none;
+}
+
 .hero-eyebrow {
   font-family: var(--font-sans); font-size: 12px; font-weight: 400;
   letter-spacing: 6px; text-transform: uppercase; color: var(--gold);
-  margin-bottom: 36px; opacity: 0; animation: fadeUp 1s 0.3s forwards;
+  margin-bottom: 36px;
 }
-.hero-title {
+.hero-title-veda {
   font-family: var(--font-serif); font-size: clamp(56px,11vw,120px); font-weight: 300;
-  letter-spacing: 10px; line-height: 0.95; color: var(--green-deep); text-transform: uppercase;
-  margin-bottom: 28px; opacity: 0; animation: fadeUp 1s 0.5s forwards, textGlow 6s 2s ease-in-out infinite;
+  letter-spacing: 20px; line-height: 0.95; color: var(--green-deep); text-transform: uppercase;
+  margin-bottom: 4px;
 }
-.hero-title span { display: block; font-weight: 600; letter-spacing: 16px; }
+.hero-title-home {
+  font-family: var(--font-serif); font-size: clamp(48px,9vw,100px); font-weight: 600;
+  letter-spacing: 16px; line-height: 1; color: var(--green-deep); text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero-divider {
+  margin-bottom: 28px;
+}
 .hero-tagline {
-  font-family: var(--font-serif); font-size: clamp(18px,2.5vw,28px); font-weight: 300;
-  font-style: italic; color: var(--gold); margin-bottom: 40px; opacity: 0; animation: fadeUp 1s 0.7s forwards;
+  font-family: var(--font-serif); font-size: clamp(22px,3vw,34px); font-weight: 300;
+  font-style: italic; color: var(--gold); margin-bottom: 12px;
+}
+.hero-subtitle {
+  font-family: var(--font-serif); font-size: clamp(14px,1.8vw,18px); font-weight: 300;
+  font-style: italic; color: var(--text-light); margin-bottom: 36px;
+  letter-spacing: 2px;
 }
 .hero-desc {
   font-family: var(--font-sans); font-size: 16px; font-weight: 300;
   color: var(--text-secondary); line-height: 1.9; max-width: 500px; margin: 0 auto 36px;
-  opacity: 0; animation: fadeUp 1s 0.9s forwards;
 }
 .hero-form {
   display: flex; gap: 0; max-width: 460px; margin: 0 auto 16px;
-  opacity: 0; animation: fadeUp 1s 1.1s forwards;
 }
 .hero-form input {
   flex: 1; padding: 16px 22px; font-family: var(--font-sans); font-size: 14px; font-weight: 300;
@@ -200,14 +204,12 @@ body {
 .hero-form-note {
   font-family: var(--font-sans); font-size: 11px; font-weight: 300;
   color: var(--text-light); letter-spacing: 0.5px; margin-bottom: 48px;
-  opacity: 0; animation: fadeUp 1s 1.2s forwards;
 }
 .hero-form-success {
   display: none; font-family: var(--font-serif); font-size: 18px;
   font-style: italic; color: var(--gold); margin-bottom: 48px;
 }
 .hero-form-success.show { display: block; animation: fadeUp 0.6s forwards; }
-.hero-scroll { opacity: 0; animation: fadeUp 1s 1.4s forwards; }
 .hero-scroll a {
   display: inline-flex; flex-direction: column; align-items: center; gap: 10px;
   text-decoration: none; color: var(--gold); font-size: 11px; letter-spacing: 3px;
@@ -216,7 +218,7 @@ body {
 .scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollLine 2.5s ease-in-out infinite; }
 
 /* ===== STORY ===== */
-.story { background: var(--cream); text-align: center; padding: 140px 24px; overflow: hidden; position: relative; }
+.story { background: var(--cream); text-align: center; padding: 100px 24px; overflow: hidden; position: relative; }
 .story-text {
   font-family: var(--font-serif); font-size: clamp(24px,4vw,38px); font-weight: 300;
   line-height: 1.7; color: var(--green-deep); max-width: 700px; margin: 48px auto 0;
@@ -232,14 +234,38 @@ body {
 }
 .scroll-marquee-inner {
   display: flex; gap: 80px; white-space: nowrap;
-  animation: marquee 30s linear infinite;
   font-family: var(--font-serif); font-size: clamp(40px,6vw,72px); font-weight: 300;
   color: rgba(45,58,46,0.04); text-transform: uppercase; letter-spacing: 12px;
 }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ===== TEMPLE SECTION ===== */
+.temple {
+  position: relative; padding: 100px 24px; text-align: center; overflow: hidden;
+  background: var(--cream-dark);
+}
+.temple-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+.temple-quote {
+  font-family: var(--font-serif); font-size: clamp(30px,5vw,52px); font-weight: 300;
+  color: var(--green-deep); line-height: 1.3; margin-bottom: 32px;
+  font-style: italic;
+}
+.temple-sub {
+  font-family: var(--font-sans); font-size: clamp(14px,1.6vw,17px); font-weight: 300;
+  color: var(--text-secondary); line-height: 1.9; max-width: 600px; margin: 0 auto;
+}
+.temple .mandala-deco {
+  position: absolute; width: 500px; height: 500px; top: 50%; left: 50%;
+  transform: translate(-50%,-50%); border-radius: 50%;
+  border: 1px solid rgba(196,176,120,0.06);
+  animation: spinSlow 120s linear infinite; pointer-events: none;
+}
+.temple .mandala-deco::before {
+  content: ''; position: absolute; inset: 30px; border-radius: 50%;
+  border: 1px dashed rgba(196,176,120,0.04);
+}
 
 /* ===== HOW IT WORKS ===== */
-.how { background: var(--green-deep); color: var(--cream); padding: 140px 24px; overflow: hidden; position: relative; }
+.how { background: var(--green-deep); color: var(--cream); padding: 100px 24px; overflow: hidden; position: relative; }
 .how .section-label { color: var(--gold-light); }
 .how .section-heading { color: var(--cream); }
 .how .sacred { position: absolute; border-radius: 50%; border: 1px solid rgba(196,176,120,0.04); pointer-events: none; }
@@ -275,7 +301,7 @@ body {
 
 /* ===== PARALLAX QUOTE ===== */
 .parallax-quote {
-  position: relative; padding: 160px 24px; text-align: center; overflow: hidden;
+  position: relative; padding: 100px 24px; text-align: center; overflow: hidden;
   background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 50%, var(--cream) 100%);
 }
 .parallax-quote .bg-text {
@@ -295,7 +321,7 @@ body {
 }
 
 /* ===== DIFFERENCE ===== */
-.difference { background: var(--cream); padding: 140px 24px; overflow: hidden; }
+.difference { background: var(--cream); padding: 100px 24px; overflow: hidden; }
 .values {
   display: grid; grid-template-columns: repeat(2,1fr); gap: 28px;
   margin-top: 80px; max-width: 960px; margin-left: auto; margin-right: auto;
@@ -345,7 +371,7 @@ body {
 /* ===== SIGNUP ===== */
 .signup {
   background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
-  text-align: center; padding: 160px 24px; overflow: hidden; position: relative;
+  text-align: center; padding: 100px 24px; overflow: hidden; position: relative;
 }
 .signup .section-heading { margin-bottom: 12px; }
 .signup-sub { font-family: var(--font-sans); font-size: 15px; font-weight: 300; color: var(--text-secondary); margin-bottom: 48px; line-height: 1.8; }
@@ -407,7 +433,7 @@ body {
   .header { padding: 18px 24px; }
   .header.scrolled { padding: 14px 24px; }
   .header-cta { padding: 8px 16px; font-size: 11px; }
-  section, .how, .story, .difference, .signup { padding: 100px 20px; }
+  section, .how, .story, .temple, .difference, .signup { padding: 72px 20px; }
   .steps { grid-template-columns: 1fr; gap: 56px; margin-top: 56px; }
   .steps::before { display: none; }
   .values { grid-template-columns: 1fr; gap: 20px; margin-top: 56px; }
@@ -423,10 +449,13 @@ body {
   .parallax-quote .bg-text { font-size: 80px; }
   .stats-grid { grid-template-columns: repeat(2,1fr); gap: 40px; }
   .cursor-glow { display: none; }
+  .hero-sanskrit { font-size: clamp(60px, 14vw, 120px); margin-bottom: -24px; }
+  .hero-title-veda { letter-spacing: 10px; }
+  .hero-title-home { letter-spacing: 8px; }
 }
 @media (max-width: 480px) {
-  .hero-title { letter-spacing: 4px; }
-  .hero-title span { letter-spacing: 8px; }
+  .hero-title-veda { letter-spacing: 4px; }
+  .hero-title-home { letter-spacing: 6px; }
   .header-logo { font-size: 14px; letter-spacing: 3px; }
   .header-logo img { height: 36px; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
@@ -459,8 +488,14 @@ body {
   <div class="mandala r4"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Plant-Based Cleaning Concentrate</p>
-    <h1 class="hero-title">Veda <span>Home</span></h1>
-    <p class="hero-tagline">Ancient wisdom. Modern clean.</p>
+    <p class="hero-sanskrit" aria-hidden="true">&#x0935;&#x0947;&#x0926;</p>
+    <h1 class="hero-title-veda">Veda</h1>
+    <p class="hero-title-home">Home</p>
+    <div class="hero-divider">
+      <div class="gold-divider"><span class="dot"></span></div>
+    </div>
+    <p class="hero-tagline">Pour. Stir. Purify.</p>
+    <p class="hero-subtitle">Ancient wisdom. Modern clean.</p>
     <p class="hero-desc">One powerful plant-based concentrate, rooted in 5,000 years of Ayurvedic tradition. Dilute to your strength. Clean every surface. Nothing synthetic. Nothing wasted.</p>
     <form class="hero-form" id="hero-form" onsubmit="return handleHeroSignup(event)">
       <input type="email" name="email" placeholder="Enter your email for early access" required autocomplete="email">
@@ -477,11 +512,9 @@ body {
   <div class="botanical"></div>
   <div class="botanical botanical-left"></div>
   <div style="max-width:1080px;margin:0 auto;position:relative;z-index:1;">
-    <div class="reveal">
-      <p class="section-label">The Story</p>
-      <div class="gold-divider"><span class="dot"></span></div>
-    </div>
-    <p class="story-text reveal d2">
+    <p class="section-label">The Story</p>
+    <div class="gold-divider"><span class="dot"></span></div>
+    <p class="story-text">
       Rooted in Ayurvedic plant wisdom.<br>
       <em>One concentrate. Every surface. No compromise.</em><br><br>
       For millennia, Ayurveda has understood the power of plants to purify, protect, and restore. We distilled that ancient knowledge into a single, beautiful bottle — so your home can be truly clean, without a trace of toxicity.
@@ -495,67 +528,67 @@ body {
   </div>
 </section>
 
+<!-- YOUR HOME IS A TEMPLE -->
+<section class="temple" id="temple">
+  <div class="mandala-deco"></div>
+  <div class="temple-content">
+    <div class="gold-divider" style="margin-bottom:40px;"><span class="dot"></span></div>
+    <p class="temple-quote">"Your home is a temple.<br>Clean it like one."</p>
+    <p class="temple-sub">In Ayurvedic tradition, the home is sacred space. Purification isn't a chore — it's a practice.</p>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
   <div class="sacred s1"></div>
   <div class="sacred s2"></div>
   <div style="max-width:1080px;margin:0 auto;position:relative;z-index:1;">
-    <div class="reveal">
-      <p class="section-label">How It Works</p>
-      <h2 class="section-heading">Beautifully Simple</h2>
-      <div class="gold-divider" style="margin-top:20px;"><span class="dot"></span></div>
-    </div>
+    <p class="section-label">How It Works</p>
+    <h2 class="section-heading">Beautifully Simple</h2>
+    <div class="gold-divider" style="margin-top:20px;"><span class="dot"></span></div>
     <div class="steps">
-      <div class="step reveal d2">
+      <div class="step">
         <p class="step-num">01</p>
         <div class="step-icon">&#x1F33F;</div>
         <h3 class="step-title">Pour</h3>
-        <p class="step-desc">A small measure of our plant-based concentrate — a little goes a remarkably long way.</p>
+        <p class="step-desc">One pouch of plant-based concentrate into your bottle. A little goes a remarkably long way.</p>
       </div>
-      <div class="step reveal d4">
+      <div class="step">
         <p class="step-num">02</p>
         <div class="step-icon">&#x1F4A7;</div>
-        <h3 class="step-title">Mix</h3>
-        <p class="step-desc">Add water and adjust the ratio to suit your task. You control the strength.</p>
+        <h3 class="step-title">Stir</h3>
+        <p class="step-desc">Fill with water. Watch the botanicals bloom.</p>
       </div>
-      <div class="step reveal d6">
+      <div class="step">
         <p class="step-num">03</p>
         <div class="step-icon">&#x2728;</div>
-        <h3 class="step-title">Clean</h3>
-        <p class="step-desc">Kitchen, bath, glass, floors — one formula handles every surface in your home.</p>
+        <h3 class="step-title">Purify</h3>
+        <p class="step-desc">Every surface in your home, one clean sweep. Kitchen, bath, glass, floors.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PARALLAX QUOTE -->
-<section class="parallax-quote">
-  <div class="bg-text" id="parallax-text">Purity</div>
-  <blockquote class="reveal">
-    "The purity of the home is the purity of the body.<br>The purity of the body is the purity of the mind."
-  </blockquote>
-  <p class="quote-author reveal d2">— Inspired by Ayurvedic Tradition</p>
-</section>
 
 <!-- STATS -->
 <section class="stats">
   <div class="stats-grid">
-    <div class="stat-item reveal d1">
+    <div class="stat-item">
       <div class="stat-number" data-target="5000">5,000</div>
       <div class="stat-label">Years of Wisdom</div>
       <div class="stat-divider"></div>
     </div>
-    <div class="stat-item reveal d2">
+    <div class="stat-item">
+      <div class="stat-number" data-target="90">90<span style="font-size:0.6em;">%</span></div>
+      <div class="stat-label">Water in Your Cleaner</div>
+      <div class="stat-divider"></div>
+    </div>
+    <div class="stat-item">
       <div class="stat-number">1</div>
       <div class="stat-label">Concentrate</div>
       <div class="stat-divider"></div>
     </div>
-    <div class="stat-item reveal d3">
-      <div class="stat-number">&#x221E;</div>
-      <div class="stat-label">Surfaces</div>
-      <div class="stat-divider"></div>
-    </div>
-    <div class="stat-item reveal d4">
+    <div class="stat-item">
       <div class="stat-number">0</div>
       <div class="stat-label">Toxins</div>
       <div class="stat-divider"></div>
@@ -566,31 +599,29 @@ body {
 <!-- DIFFERENCE -->
 <section class="difference" id="difference">
   <div style="max-width:1080px;margin:0 auto;position:relative;z-index:1;">
-    <div class="reveal">
-      <p class="section-label">What Sets Us Apart</p>
-      <h2 class="section-heading">Clean, Redefined</h2>
-      <div class="gold-divider" style="margin-top:20px;"><span class="dot"></span></div>
-    </div>
+    <p class="section-label">What Sets Us Apart</p>
+    <h2 class="section-heading">Clean, Redefined</h2>
+    <div class="gold-divider" style="margin-top:20px;"><span class="dot"></span></div>
     <div class="values">
-      <div class="value-card reveal d2"><div class="glow"></div>
+      <div class="value-card"><div class="glow"></div>
         <span class="value-icon">&#x1F331;</span>
         <h3 class="value-title">Plant-Based, Non-Toxic</h3>
-        <p class="value-desc">Every ingredient is derived from plants. No synthetic fragrances, no harsh chemicals, no hidden compromises. Safe for your family, your pets, and the planet.</p>
+        <p class="value-desc">Every ingredient derived from plants. No synthetic fragrances, no harsh chemicals. Safe for your family, your pets, and the planet.</p>
       </div>
-      <div class="value-card reveal d3"><div class="glow"></div>
+      <div class="value-card"><div class="glow"></div>
         <span class="value-icon">&#x2696;</span>
         <h3 class="value-title">You Control the Strength</h3>
-        <p class="value-desc">A light mist for daily counters, a powerful solution for deep cleans. One concentrate adapts to every need — because you know your home best.</p>
+        <p class="value-desc">A light mist for daily counters, a powerful solution for deep cleans. One concentrate adapts to every need.</p>
       </div>
-      <div class="value-card reveal d4"><div class="glow"></div>
+      <div class="value-card"><div class="glow"></div>
         <span class="value-icon">&#x1F4A0;</span>
-        <h3 class="value-title">One Bottle Replaces Dozens</h3>
-        <p class="value-desc">No more cluttered cabinets. A single compact bottle replaces an entire shelf of single-use cleaners. Less waste. More space. More intention.</p>
+        <h3 class="value-title">One Pouch Replaces a Bottle</h3>
+        <p class="value-desc">Six lightweight pouches replace six heavy spray bottles. You keep the bottle. We send the substance.</p>
       </div>
-      <div class="value-card reveal d5"><div class="glow"></div>
+      <div class="value-card"><div class="glow"></div>
         <span class="value-icon">&#x1F3F5;</span>
-        <h3 class="value-title">Inspired by Ayurveda</h3>
-        <p class="value-desc">Our formulations draw from Ayurvedic botanicals revered for centuries for their purifying properties. Ancient wisdom, rigorously tested for the modern home.</p>
+        <h3 class="value-title">Rooted in Ayurveda</h3>
+        <p class="value-desc">Inspired by 5,000 years of plant-based home purification. Lemongrass, eucalyptus, and botanicals that cleaned homes long before chemicals existed.</p>
       </div>
     </div>
   </div>
@@ -600,16 +631,14 @@ body {
 <section class="signup" id="signup">
   <div class="mandala"></div>
   <div style="max-width:1080px;margin:0 auto;position:relative;z-index:1;">
-    <div class="reveal">
-      <p class="section-label">Coming Soon</p>
-      <h2 class="section-heading">Be the First to Experience Veda Home</h2>
-    </div>
-    <p class="signup-sub reveal d2">We are launching soon. Leave your email and we will let you know the moment we are ready.</p>
-    <form class="signup-form reveal d3" id="signup-form" onsubmit="return handleSignup(event)">
+    <p class="section-label">Coming Soon</p>
+    <h2 class="section-heading">Be the First to Experience Veda Home</h2>
+    <p class="signup-sub">We are launching soon. Leave your email and we will let you know the moment we are ready.</p>
+    <form class="signup-form" id="signup-form" onsubmit="return handleSignup(event)">
       <input type="email" name="email" placeholder="Your email address" required autocomplete="email">
       <button type="submit">Subscribe</button>
     </form>
-    <p class="signup-note reveal d3">No spam. Just one beautiful announcement.</p>
+    <p class="signup-note">No spam. Just one beautiful announcement.</p>
     <p class="signup-success" id="signup-success">Thank you. We will be in touch soon.</p>
   </div>
 </section>
@@ -630,58 +659,247 @@ body {
   </div>
 </footer>
 
+<!-- GSAP + ScrollTrigger + ScrollToPlugin CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
 <script>
-// Scroll reveal
-(function(){
-  const els = document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
-  const obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
-  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-  els.forEach(function(el){ obs.observe(el); });
-})();
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-// Header scroll
-(function(){
-  const h = document.getElementById('header');
-  window.addEventListener('scroll', function(){
-    requestAnimationFrame(function(){ h.classList.toggle('scrolled', window.scrollY > 60); });
+// ===== SET INITIAL STATES (prevents flash, GSAP animates TO visible) =====
+gsap.set(".hero-sanskrit", { autoAlpha: 0, scale: 0.9 });
+gsap.set(".hero-eyebrow", { autoAlpha: 0, y: 20 });
+gsap.set(".hero-title-veda", { autoAlpha: 0, y: 30 });
+gsap.set(".hero-title-home", { autoAlpha: 0, y: 30 });
+gsap.set(".hero-divider", { autoAlpha: 0, scaleX: 0 });
+gsap.set(".hero-tagline", { autoAlpha: 0, y: 20 });
+gsap.set(".hero-subtitle", { autoAlpha: 0, y: 16 });
+gsap.set(".hero-desc", { autoAlpha: 0, y: 24 });
+gsap.set(".hero-form", { autoAlpha: 0, y: 20 });
+gsap.set(".hero-form-note", { autoAlpha: 0, y: 12 });
+gsap.set(".hero-scroll", { autoAlpha: 0, y: 16 });
+
+gsap.set([".story .section-label", ".story-text"], { autoAlpha: 0, y: 30 });
+gsap.set(".story .gold-divider", { autoAlpha: 0, scaleX: 0 });
+
+gsap.set([".temple .gold-divider"], { autoAlpha: 0, scaleX: 0 });
+gsap.set(".temple-quote", { autoAlpha: 0, y: 40 });
+gsap.set(".temple-sub", { autoAlpha: 0, y: 24 });
+
+gsap.set([".how .section-label", ".how .section-heading"], { autoAlpha: 0, y: 24 });
+gsap.set(".how .gold-divider", { autoAlpha: 0, scaleX: 0 });
+gsap.set(".step", { autoAlpha: 0, y: 60 });
+
+gsap.set(".parallax-quote blockquote", { autoAlpha: 0, y: 50 });
+gsap.set(".parallax-quote .quote-author", { autoAlpha: 0, y: 20 });
+
+gsap.set(".stat-item", { autoAlpha: 0, y: 40 });
+
+gsap.set([".difference .section-label", ".difference .section-heading"], { autoAlpha: 0, y: 24 });
+gsap.set(".difference .gold-divider", { autoAlpha: 0, scaleX: 0 });
+gsap.set(".value-card", { autoAlpha: 0, y: 50 });
+
+gsap.set([".signup .section-label", ".signup .section-heading"], { autoAlpha: 0, y: 24 });
+gsap.set([".signup-sub", ".signup-form"], { autoAlpha: 0, y: 20 });
+gsap.set(".signup-note", { autoAlpha: 0 });
+
+// ===== REDUCED MOTION SUPPORT =====
+var mm = gsap.matchMedia();
+
+mm.add({
+  isDesktop: "(min-width: 769px)",
+  isMobile: "(max-width: 768px)",
+  reduceMotion: "(prefers-reduced-motion: reduce)"
+}, function(context) {
+  var isDesktop = context.conditions.isDesktop;
+  var reduceMotion = context.conditions.reduceMotion;
+  var dur = reduceMotion ? 0 : undefined;
+
+  // ===== HERO ENTRANCE TIMELINE =====
+  var heroTl = gsap.timeline({ defaults: { ease: "power3.out", duration: dur || 1 } });
+  heroTl
+    .to(".hero-sanskrit", { autoAlpha: 0.08, scale: 1, duration: dur || 1.4 }, 0.2)
+    .to(".hero-eyebrow", { autoAlpha: 1, y: 0, duration: dur || 0.7 }, 0.3)
+    .to(".hero-title-veda", { autoAlpha: 1, y: 0, duration: dur || 1.2 }, 0.5)
+    .to(".hero-title-home", { autoAlpha: 1, y: 0, duration: dur || 1 }, 0.8)
+    .to(".hero-divider", { autoAlpha: 1, scaleX: 1, duration: dur || 0.7 }, 1.1)
+    .to(".hero-tagline", { autoAlpha: 1, y: 0, duration: dur || 0.8 }, 1.3)
+    .to(".hero-subtitle", { autoAlpha: 1, y: 0, duration: dur || 0.6 }, 1.5)
+    .to(".hero-desc", { autoAlpha: 1, y: 0, duration: dur || 0.8 }, 1.7)
+    .to(".hero-form", { autoAlpha: 1, y: 0, duration: dur || 0.7 }, 1.9)
+    .to(".hero-form-note", { autoAlpha: 1, y: 0, duration: dur || 0.5 }, 2.1)
+    .to(".hero-scroll", { autoAlpha: 1, y: 0, duration: dur || 0.5 }, 2.3);
+
+  // ===== HERO PARALLAX + FADE (desktop only) =====
+  if (isDesktop && !reduceMotion) {
+    gsap.to(".hero .mandala.r2", { y: 80, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }});
+    gsap.to(".hero .mandala.r3", { y: 50, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }});
+    gsap.to(".hero .mandala.r4", { y: 120, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }});
+    gsap.to(".hero-mandala-svg", { y: -60, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }});
+
+    gsap.to(".hero-content", {
+      autoAlpha: 0, y: -60, ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "center center", end: "bottom top", scrub: true }
+    });
+  }
+
+  // ===== STORY SECTION =====
+  var storyTl = gsap.timeline({
+    scrollTrigger: { trigger: ".story", start: "top 75%", toggleActions: "play none none none" }
   });
-})();
+  storyTl
+    .to(".story .section-label", { autoAlpha: 1, y: 0, duration: dur || 0.7 })
+    .to(".story .gold-divider", { autoAlpha: 1, scaleX: 1, duration: dur || 0.6 }, "-=0.3")
+    .to(".story-text", { autoAlpha: 1, y: 0, duration: dur || 1 }, "-=0.2");
 
-// Parallax on hero mandalas + quote bg text
-(function(){
-  const rings = document.querySelectorAll('.hero .mandala.r2,.hero .mandala.r3,.hero .mandala.r4');
-  const bgText = document.getElementById('parallax-text');
-  window.addEventListener('scroll', function(){
-    requestAnimationFrame(function(){
-      const y = window.scrollY;
-      rings.forEach(function(r,i){ r.style.transform = 'translateY('+(y*(i+1)*0.06)+'px)'; });
-      if(bgText){ bgText.style.transform = 'translate(-50%,-50%) translateX('+(y*0.1)+'px)'; }
+  // ===== SCROLL MARQUEE =====
+  if (!reduceMotion) {
+    gsap.to(".scroll-marquee-inner", {
+      xPercent: -50, ease: "none", duration: 20, repeat: -1
+    });
+    gsap.to(".scroll-marquee-inner", {
+      x: "-=200", ease: "none",
+      scrollTrigger: { trigger: ".scroll-marquee", start: "top bottom", end: "bottom top", scrub: 0.5 }
+    });
+  }
+
+  // ===== TEMPLE SECTION =====
+  var templeTl = gsap.timeline({
+    scrollTrigger: { trigger: ".temple", start: "top 70%", toggleActions: "play none none none" }
+  });
+  templeTl
+    .to(".temple .gold-divider", { autoAlpha: 1, scaleX: 1, duration: dur || 0.6 })
+    .to(".temple-quote", { autoAlpha: 1, y: 0, duration: dur || 1, ease: "power2.out" }, "-=0.2")
+    .to(".temple-sub", { autoAlpha: 1, y: 0, duration: dur || 0.8, ease: "power2.out" }, "-=0.4");
+
+  // ===== HOW IT WORKS =====
+  var howTl = gsap.timeline({
+    scrollTrigger: { trigger: ".how", start: "top 70%", toggleActions: "play none none none" }
+  });
+  howTl
+    .to(".how .section-label", { autoAlpha: 1, y: 0, duration: dur || 0.6 })
+    .to(".how .section-heading", { autoAlpha: 1, y: 0, duration: dur || 0.7 }, "-=0.3")
+    .to(".how .gold-divider", { autoAlpha: 1, scaleX: 1, duration: dur || 0.5 }, "-=0.2")
+    .to(".step", {
+      autoAlpha: 1, y: 0, duration: dur || 0.8,
+      stagger: { amount: dur || 0.4, from: "start" },
+      ease: "power2.out"
+    }, "-=0.1");
+
+  // ===== PARALLAX QUOTE =====
+  gsap.to(".parallax-quote blockquote", {
+    autoAlpha: 1, y: 0, duration: dur || 1,
+    scrollTrigger: { trigger: ".parallax-quote", start: "top 70%", toggleActions: "play none none none" }
+  });
+  gsap.to(".parallax-quote .quote-author", {
+    autoAlpha: 1, y: 0, duration: dur || 0.7,
+    scrollTrigger: { trigger: ".parallax-quote", start: "top 60%", toggleActions: "play none none none" }
+  });
+
+  if (!reduceMotion) {
+    gsap.to("#parallax-text", {
+      xPercent: 15, ease: "none",
+      scrollTrigger: { trigger: ".parallax-quote", start: "top bottom", end: "bottom top", scrub: true }
+    });
+  }
+
+  // ===== STATS COUNTER =====
+  var statItems = document.querySelectorAll(".stat-item");
+  statItems.forEach(function(item, i) {
+    gsap.to(item, {
+      autoAlpha: 1, y: 0, duration: dur || 0.7,
+      delay: (dur || 0.15) * i,
+      scrollTrigger: { trigger: ".stats", start: "top 75%", toggleActions: "play none none none" }
     });
   });
-})();
 
-// Cursor glow
+  // Animate "5,000" counter
+  var counter5000El = document.querySelector('[data-target="5000"]');
+  if (counter5000El && !reduceMotion) {
+    var counter5000 = { val: 0 };
+    gsap.to(counter5000, {
+      val: 5000, duration: 2, ease: "power2.out",
+      scrollTrigger: { trigger: ".stats", start: "top 75%", toggleActions: "play none none none" },
+      onUpdate: function() {
+        counter5000El.textContent = Math.round(counter5000.val).toLocaleString();
+      }
+    });
+  }
+
+  // Animate "90%" counter
+  var counter90El = document.querySelector('[data-target="90"]');
+  if (counter90El && !reduceMotion) {
+    var counter90 = { val: 0 };
+    gsap.to(counter90, {
+      val: 90, duration: 1.8, ease: "power2.out",
+      scrollTrigger: { trigger: ".stats", start: "top 75%", toggleActions: "play none none none" },
+      onUpdate: function() {
+        counter90El.innerHTML = Math.round(counter90.val) + '<span style="font-size:0.6em;">%</span>';
+      }
+    });
+  }
+
+  // ===== DIFFERENCE =====
+  var diffTl = gsap.timeline({
+    scrollTrigger: { trigger: ".difference", start: "top 70%", toggleActions: "play none none none" }
+  });
+  diffTl
+    .to(".difference .section-label", { autoAlpha: 1, y: 0, duration: dur || 0.6 })
+    .to(".difference .section-heading", { autoAlpha: 1, y: 0, duration: dur || 0.7 }, "-=0.3")
+    .to(".difference .gold-divider", { autoAlpha: 1, scaleX: 1, duration: dur || 0.5 }, "-=0.2");
+
+  ScrollTrigger.batch(".value-card", {
+    start: "top 85%",
+    onEnter: function(elements) {
+      gsap.to(elements, {
+        autoAlpha: 1, y: 0,
+        duration: dur || 0.8, stagger: dur || 0.15,
+        ease: "power2.out", overwrite: true
+      });
+    }
+  });
+
+  // ===== SIGNUP =====
+  var signupTl = gsap.timeline({
+    scrollTrigger: { trigger: ".signup", start: "top 70%", toggleActions: "play none none none" }
+  });
+  signupTl
+    .to(".signup .section-label", { autoAlpha: 1, y: 0, duration: dur || 0.6 })
+    .to(".signup .section-heading", { autoAlpha: 1, y: 0, duration: dur || 0.7 }, "-=0.3")
+    .to(".signup-sub", { autoAlpha: 1, y: 0, duration: dur || 0.6 }, "-=0.1")
+    .to(".signup-form", { autoAlpha: 1, y: 0, duration: dur || 0.6 }, "-=0.2")
+    .to(".signup-note", { autoAlpha: 1, duration: dur || 0.4 }, "-=0.1");
+
+}); // end matchMedia
+
+// ===== HEADER SCROLL via ScrollTrigger =====
+ScrollTrigger.create({
+  start: 60,
+  onUpdate: function(self) {
+    document.getElementById('header').classList.toggle('scrolled', self.scroll() > 60);
+  }
+});
+
+// ===== CURSOR GLOW =====
 (function(){
-  const g = document.getElementById('glow');
-  if(!g) return;
-  document.addEventListener('mousemove', function(e){
-    g.style.left = e.clientX+'px'; g.style.top = e.clientY+'px';
+  var g = document.getElementById('glow');
+  if (!g) return;
+  document.addEventListener('mousemove', function(e) {
+    gsap.to(g, { x: e.clientX, y: e.clientY, duration: 0.3, ease: "power2.out", overwrite: true });
   });
 })();
 
-// Value card mouse glow
-document.querySelectorAll('.value-card').forEach(function(card){
-  card.addEventListener('mousemove', function(e){
-    const r = card.getBoundingClientRect();
-    const x = ((e.clientX - r.left)/r.width*100);
-    const y = ((e.clientY - r.top)/r.height*100);
-    card.style.setProperty('--mouse-x', x+'%');
-    card.style.setProperty('--mouse-y', y+'%');
+// ===== VALUE CARD MOUSE GLOW =====
+document.querySelectorAll('.value-card').forEach(function(card) {
+  card.addEventListener('mousemove', function(e) {
+    var r = card.getBoundingClientRect();
+    card.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width * 100) + '%');
+    card.style.setProperty('--mouse-y', ((e.clientY - r.top) / r.height * 100) + '%');
   });
 });
 
-// Hero email signup
+// ===== EMAIL SIGNUP (Web3Forms) =====
 async function submitToWeb3Forms(email) {
   var res = await fetch('https://api.web3forms.com/submit', {
     method: 'POST',
@@ -699,36 +917,48 @@ async function submitToWeb3Forms(email) {
   return data.success;
 }
 
-async function handleHeroSignup(e){
+async function handleHeroSignup(e) {
   e.preventDefault();
   var email = document.querySelector('#hero-form input[name="email"]').value;
   var ok = await submitToWeb3Forms(email);
-  if(ok){
-    document.getElementById('hero-form').style.display='none';
-    document.querySelector('.hero-form-note').style.display='none';
-    document.getElementById('hero-form-success').classList.add('show');
+  if (ok) {
+    gsap.to('#hero-form', { autoAlpha: 0, y: -10, duration: 0.4, onComplete: function() {
+      document.getElementById('hero-form').style.display = 'none';
+    }});
+    gsap.to('.hero-form-note', { autoAlpha: 0, duration: 0.3 });
+    var success = document.getElementById('hero-form-success');
+    success.style.display = 'block';
+    gsap.set(success, { autoAlpha: 0, y: 16 });
+    gsap.to(success, { autoAlpha: 1, y: 0, duration: 0.6 });
   }
   return false;
 }
 
-// Bottom email signup
-async function handleSignup(e){
+async function handleSignup(e) {
   e.preventDefault();
   var email = document.querySelector('#signup-form input[name="email"]').value;
   var ok = await submitToWeb3Forms(email);
-  if(ok){
-    document.getElementById('signup-form').style.display='none';
-    document.querySelector('.signup-note').style.display='none';
-    document.getElementById('signup-success').classList.add('show');
+  if (ok) {
+    gsap.to('#signup-form', { autoAlpha: 0, y: -10, duration: 0.4, onComplete: function() {
+      document.getElementById('signup-form').style.display = 'none';
+    }});
+    gsap.to('.signup-note', { autoAlpha: 0, duration: 0.3 });
+    var success = document.getElementById('signup-success');
+    success.style.display = 'block';
+    gsap.set(success, { autoAlpha: 0, y: 16 });
+    gsap.to(success, { autoAlpha: 1, y: 0, duration: 0.6 });
   }
   return false;
 }
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click', function(e){
+// ===== SMOOTH SCROLL via ScrollToPlugin =====
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
     var t = document.querySelector(this.getAttribute('href'));
-    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+    if (t) {
+      e.preventDefault();
+      gsap.to(window, { scrollTo: { y: t, offsetY: 0 }, duration: 1, ease: "power2.inOut" });
+    }
   });
 });
 </script>
